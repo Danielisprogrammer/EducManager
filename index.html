@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduManager | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="principale">
+        <div class="dashboard">
+
+            <h1><span>Educ</span>Manager</h1>
+            <p class="title1">(plateforme de gestion des etudiants)</p>
+
+            <form action="">
+                <p class="title2">Ajouter un Etudiant.</p>
+                <label for="name" id="name">Nom</label><br>
+                <input type="text" id="name" name="name" placeholder="ex: Tachago" required><br>
+
+                <label for="prenom" id="prenom">Prenom</label><br>
+                <input type="text" id="prenom" name="prenom" placeholder="ex: Daniel" required><br>
+
+                <label for="email" id="email">Email</label><br>
+                <input type="email" id="email" name="email" placeholder="ex:xxxxx@gmail.com"><br>
+
+                <label for="age" id="age">Age</label><br>
+                <input type="number" id="age" name="age" placeholder="ex: 23" required><br>
+
+                <label for="filiere" id="filiere">Filiere</label><br>
+                <select name="filiere" id="filiere" required>
+                    <option value="Informatique">Informatique</option>
+                    <option value="Mathematique">Mathematique</option>
+                    <option value="Physique">Physique</option>
+                    <option value="Chimie">Chimie</option>
+                </select><br>
+                <button type="submit">Enregistrer</button>
+                
+            </form>
+        </div>
+        <div class="liste">
+            <h2>Liste des Etudiants</h2>
+            <p id="inscrit"> 0 Etudiant(s) inscrit(s)</p>
+            <table>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Filiere</th>
+                    <th>Action(s)</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</body>
+</html>
