@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root {
     --primary: #c70c0c;
-    --primary-hover: #7e0721;
+    --primary-hover: #a81bbb;
     --bg-body: #f8fafc;
     --bg-card: #ffffff;
     --text-main: #1e293b;
@@ -79,9 +79,17 @@ body {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    margin-top: 50px;
+    margin-top: 30px;
     width: 60%;
+    font-weight: 700;
 
+}
+.dashboard form button:hover {
+    background-color: var(--primary-hover);
+    cursor: pointer;
+    transform: rotate(2deg);
+    animation-duration: 2ms;
+    font-size: 1.05rem;
 }
 
 /* page droite */
@@ -106,4 +114,19 @@ body {
 }
 .liste table th {
     color: var(--primary);
+}
+.edit-btn, .delete-btn {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+th, td {
+    text-align: center; 
+    padding: 12px;
+}
+.liste .actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 10px;
 }

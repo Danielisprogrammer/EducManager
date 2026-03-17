@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EduManager | Dashboard</title>
     <link rel="stylesheet" href="style.css">
-    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
 </head>
 <body>
     <div class="principale">
@@ -14,21 +16,21 @@
             <h1><span>Educ</span>Manager</h1>
             <p class="title1">(plateforme de gestion des etudiants)</p>
 
-            <form action="">
+            <form id="student-form">
                 <p class="title2">Ajouter un Etudiant.</p>
-                <label for="name" id="name">Nom</label><br>
+                <label for="name">Nom</label><br>
                 <input type="text" id="name" name="name" placeholder="ex: Tachago" required><br>
 
-                <label for="prenom" id="prenom">Prenom</label><br>
+                <label for="prenom">Prenom</label><br>
                 <input type="text" id="prenom" name="prenom" placeholder="ex: Daniel" required><br>
 
-                <label for="email" id="email">Email</label><br>
+                <label for="email">Email</label><br>
                 <input type="email" id="email" name="email" placeholder="ex:xxxxx@gmail.com"><br>
 
-                <label for="age" id="age">Age</label><br>
+                <label for="age">Age</label><br>
                 <input type="number" id="age" name="age" placeholder="ex: 23" required><br>
 
-                <label for="filiere" id="filiere">Filiere</label><br>
+                <label for="filiere">Filiere</label><br>
                 <select name="filiere" id="filiere" required>
                     <option value="Informatique">Informatique</option>
                     <option value="Mathematique">Mathematique</option>
@@ -41,7 +43,7 @@
         </div>
         <div class="liste">
             <h2>Liste des Etudiants</h2>
-            <p id="inscrit"> 0 Etudiant(s) inscrit(s)</p>
+            <p id="inscrit-count"> 0 Etudiant(s) inscrit(s)</p>
             <table>
                 <tr>
                     <th>Nom</th>
@@ -51,17 +53,15 @@
                     <th>Filiere</th>
                     <th>Action(s)</th>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                <tbody id="student-table-body">
+
+                </tbody>
+                    
             </table>
 
         </div>
     </div>
+
+    <script src="./script.js"></script>
 </body>
 </html>
