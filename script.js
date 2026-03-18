@@ -1,5 +1,10 @@
-// 1. Ton tableau de données (La source de vérité)
-let listeEtudiants = []; 
+// On essaie de récupérer les données, sinon on crée un tableau vide []
+let listeEtudiants = JSON.parse(localStorage.getItem('mes_etudiants')) || [];
+
+// IMPORTANT : Appelle tes fonctions d'affichage dès le chargement du script
+// pour que les données enregistrées apparaissent direct au démarrage
+rafraichirInterface();
+mettreAJourCompteur(); 
 
 
 const monFormulaire = document.getElementById('student-form');
@@ -22,12 +27,11 @@ monFormulaire.addEventListener('submit', function(event) {
 
     // On l'ajoute à la liste
     listeEtudiants.push(nouvelEtudiant);
-
-    // On vide le formulaire pour la prochaine saisie
+    sauvegarderDansLeStockage(); 
+    
     monFormulaire.reset();
-
-    // On demande au tableau de se mettre à jour
     rafraichirInterface();
+    mettreAJourCompteur();
 });
 
 function rafraichirInterface() {
@@ -63,3 +67,29 @@ function rafraichirInterface() {
     });
 }
 
+function mettreAJourCompteur() {
+
+    const affichage = document.getElementById('inscrit-count'); 
+    if (affichage) {
+        // 3. On injecte le texte avec la longueur du tableau JS
+        affichage.innerText = listeEtudiants.length + " Etudiant(s) inscrit(s)";
+    }
+}
+function sauvegarderDansLeStockage() {
+    // JSON.stringify transforme ton tableau d'objets en texte (String)
+    localStorage.setItem('mes_etudiants', JSON.stringify(listeEtudiants));
+}
+
+function supprimerEtudiant(idASupprimer) {
+    // 1. Une petite confirmation pour la sécurité
+    if (confirm("Voulez-vous vraiment supprimer cet étudiant ?")) {
+        
+        // 2. On filtre : on garde tous les étudiants SAUF celui qui a cet ID
+        listeEtudiants = listeEtudiants.filter(etudiant => etudiant.id !== idASupprimer);
+
+        // 3. On synchronise tout
+        sauvegarderDansLeStockage(); // Ta fonction de LocalStorage
+        rafraichirInterface();       // Ta fonction qui redessine le <tbody>
+        mettreAJourCompteur();       // Ta fonction qui change le chiffre en haut
+    }
+}
