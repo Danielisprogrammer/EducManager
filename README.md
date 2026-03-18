@@ -17,6 +17,8 @@ EducManager is a front-end web student management application designed to simpli
 - **Home Page** : Zone de saisie intuitive avec validation des champs.
 - **Student List** : Tableau structuré affichant les informations clés (Nom, Email, Âge, Filière).
 
+![Texte alternatif](/Assets/images/Capture%20d’écran%20du%202026-03-18%2012-04-19.png)
+
 ---
 
 ## 4. Local project (clone) 
@@ -25,6 +27,7 @@ Copy this link and paste it into your terminal, then open `index.html`:
 
 ```bash
 git clone [https://github.com/Danielisprogrammer/EducManager.git]
+```
 
 ##Author
 This project was designed and developed by Daniel Kengne (Daniel is programmer).
