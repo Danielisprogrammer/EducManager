@@ -16,8 +16,13 @@
             <h1><span>Educ</span>Manager</h1>
             <p class="title1">(plateforme de gestion des etudiants)</p>
 
-            <form id="student-form">
+            <button id="add-student-btn">Ajouter Étudiant</button>
+
+            <form id="student-form" style="display: none;">
                 <p class="title2">Ajouter un Etudiant.</p>
+                <label for="photo">Photo (URL)</label><br>
+                <input type="url" id="photo" name="photo" placeholder="ex: https://example.com/photo.jpg"><br>
+
                 <label for="name">Nom</label><br>
                 <input type="text" id="name" name="name" placeholder="ex: Tachago" required><br>
 
@@ -37,28 +42,21 @@
                     <option value="Physique">Physique</option>
                     <option value="Chimie">Chimie</option>
                 </select><br>
-                <button type="submit">Enregistrer</button>
+                <button type="submit" id="submit-btn">Enregistrer</button>
+                <button type="button" id="cancel-btn" style="display: none;">Annuler</button>
                 
             </form>
         </div>
         <div class="liste">
             <h2>Liste des Etudiants</h2>
             <p id="inscrit-count"> 0 Etudiant(s) inscrit(s)</p>
-            <table>
-                <tr>
-                    <th>Nom</th>
-                    <th>Prenom</th>
-                    <th>Email</th>
-                    <th>Age</th>
-                    <th>Filiere</th>
-                    <th>Action(s)</th>
-                </tr>
-                <tbody id="student-table-body">
-
-                </tbody>
-                    
-            </table>
-
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Rechercher un étudiant...">
+                <button id="toggle-list-btn">Afficher Liste</button>
+            </div>
+            <div id="student-cards" style="display: none;">
+                <!-- Les cartes des étudiants seront insérées ici -->
+            </div>
         </div>
     </div>
 
